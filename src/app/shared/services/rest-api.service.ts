@@ -31,7 +31,7 @@ export class RestApiService {
 
   getEmployees(): Observable<Employee> {
     return this._http
-      .get<Employee>(this.api_Url + "/employees")
+      .get<Employee>(this.api_Url + "/test.json")
       .pipe(retry(1), catchError(this.handleError));
   }
 
