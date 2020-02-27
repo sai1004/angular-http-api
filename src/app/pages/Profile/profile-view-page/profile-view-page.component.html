@@ -1,0 +1,44 @@
+<section>
+  <mat-toolbar>
+    Profile
+    <span class="example-fill-remaining-space"></span>
+
+    <button
+      class="edit-btn"
+      mat-raised-button
+      color="primary"
+      routerLink="/profile-edit"
+    >
+      <mat-icon>edit</mat-icon>
+    </button>
+  </mat-toolbar>
+  <table mat-table [dataSource]="profile" class="mat-elevation-z8">
+    <!-- Position Column -->
+    <ng-container matColumnDef="id">
+      <th mat-header-cell *matHeaderCellDef>No.</th>
+      <td mat-cell *matCellDef="let element">{{ element.id }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="name">
+      <th mat-header-cell *matHeaderCellDef>Name</th>
+      <td mat-cell *matCellDef="let element">{{ element.name }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="email">
+      <th mat-header-cell *matHeaderCellDef>Email</th>
+      <td mat-cell *matCellDef="let element">{{ element.email }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="mobile">
+      <th mat-header-cell *matHeaderCellDef>Mobile</th>
+      <td mat-cell *matCellDef="let element">{{ element.mobile }}</td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+  </table>
+
+  <button mat-fab color="warn" style=" position: fixed; right: 30px; top: 92% ">
+    <mat-icon>add</mat-icon>
+  </button>
+</section>
