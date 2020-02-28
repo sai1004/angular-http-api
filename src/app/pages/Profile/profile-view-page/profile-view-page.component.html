@@ -38,7 +38,17 @@
     <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
   </table>
 
-  <button mat-fab color="warn" style=" position: fixed; right: 30px; top: 92% ">
+<!-- mat-dialog -->
+<!-- <div>
+  <mat-form-field>
+    <mat-label>What's your name?</mat-label>
+    <input matInput name="profile.name" [(ngModel)]="profile.name">
+  </mat-form-field>
+
+</div> -->
+ 
+
+  <button mat-fab color="warn"  (click)="openDialog()" style=" position: fixed; right: 30px; top: 92% ">
     <mat-icon>add</mat-icon>
   </button>
 </section>
