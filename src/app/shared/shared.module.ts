@@ -5,18 +5,20 @@ import { HttpClientModule } from "@angular/common/http";
 import { MaterialModule } from "./material.module";
 import { FlexLayoutModule } from "@angular/flex-layout";
 import { ShadowDirective } from "./directives/shadow.directive";
+import { BaconDirective } from "./directives/bacon.directive";
 
 @NgModule({
   imports: [FlexLayoutModule, FormsModule, MaterialModule, HttpClientModule],
 
-  declarations: [ShadowDirective],
+  declarations: [ShadowDirective, BaconDirective],
 
   exports: [
     FormsModule,
     FlexLayoutModule,
     MaterialModule,
     HttpClientModule,
-    ShadowDirective
+    ShadowDirective,
+    BaconDirective
   ],
 
   providers: []
