@@ -5,6 +5,7 @@ import {
   ElementRef,
   AfterViewInit
 } from "@angular/core";
+import { BaconDirective } from "src/app/shared/directives/bacon.directive";
 
 @Component({
   selector: "app-profile-edit-page",
@@ -17,6 +18,13 @@ export class ProfileEditPageComponent implements OnInit, AfterViewInit {
   @ViewChild("para")
   para: ElementRef;
 
+  extraIngredient: string;
+
+  @ViewChild(BaconDirective)
+  set appBacon(directive: BaconDirective) {
+    this.extraIngredient = directive.ingredent;
+  }
+
   constructor() {}
 
   ngOnInit(): void {}
@@ -25,5 +33,6 @@ export class ProfileEditPageComponent implements OnInit, AfterViewInit {
     console.log(this.span);
     console.log("Values on ngAfterViewInit():");
     console.log("Paragraph: ", this.para.nativeElement);
+    console.log(this.extraIngredient); 
   }
 }
