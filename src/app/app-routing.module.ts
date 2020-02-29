@@ -4,12 +4,14 @@ import { EmployeeListPageComponent } from "./pages/Employee/employee-list-page/e
 import { ProfileViewPageComponent } from "./pages/Profile/profile-view-page/profile-view-page.component";
 import { ProfileEditPageComponent } from "./pages/Profile/profile-edit-page/profile-edit-page.component";
 import { ProfileCreatePageComponent } from "./pages/Profile/profile-create-page/profile-create-page.component";
+import { ProductPageComponent } from "./pages/product-page/product-page.component";
 
 const routes: Routes = [
   { path: "emp-list", component: EmployeeListPageComponent },
   { path: "profile-view", component: ProfileViewPageComponent },
   { path: "profile-edit", component: ProfileEditPageComponent },
-  { path: "profile-create", component: ProfileCreatePageComponent }
+  { path: "profile-create", component: ProfileCreatePageComponent },
+  { path: "product", component: ProductPageComponent }
 ];
 
 @NgModule({

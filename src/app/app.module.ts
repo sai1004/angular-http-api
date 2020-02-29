@@ -19,6 +19,8 @@ import { ProfileCreatePageComponent } from "./pages/Profile/profile-create-page/
 /* */
 
 import { RestApiService } from "../app/shared/services/rest-api.service";
+import { ProductPageComponent } from './pages/product-page/product-page.component';
+import { ProductFormComponent } from './components/product-form/product-form.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +32,9 @@ import { RestApiService } from "../app/shared/services/rest-api.service";
     EmployeeEditComponent,
     ProfileViewPageComponent,
     ProfileEditPageComponent,
-    ProfileCreatePageComponent
+    ProfileCreatePageComponent,
+    ProductPageComponent,
+    ProductFormComponent
   ],
   imports: [
     BrowserModule,
