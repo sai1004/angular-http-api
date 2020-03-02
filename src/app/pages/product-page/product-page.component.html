@@ -1,14 +1,41 @@
 <!-- <div *ngIf="shouldSayHello then home" class="Hello-world">Hello world</div> -->
-
+<!-- 
 <ng-template [ngIf]="shouldSayHello">
   <div class="Hello-world">
     Hello ji 
   </div>
-</ng-template>
-
+</ng-template> -->
 
 <!-- 
 <ng-template [ngIf]="home">
 <p>ksdjk</p>
 
 </ng-template> -->
+
+<!-- parent -->
+<app-product-form
+  [itemTemplate]="productsEdit"
+  [data]="products"
+></app-product-form>
+<ng-template #productsList let-item>
+  <div style="display: flex; justify-content: space-between;">
+    <span>
+      {{ item.id }} - <b>{{ item.name }}</b>
+    </span>
+    <mark> Stars: {{ item.rating }} </mark>
+  </div>
+</ng-template>
+
+<ng-template #productsEdit>
+  <div>
+    <mat-form-field>
+      <input
+        mat-input
+        type="text"
+        [(ngModel)]="products.name"
+        name="name"
+        placeholder="Enter Product Name "
+      />
+    </mat-form-field>
+  </div>
+</ng-template>

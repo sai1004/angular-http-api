@@ -1,15 +1,21 @@
-import { Component, OnInit } from '@angular/core';
+import {
+  Component,
+  OnInit,
+  ChangeDetectionStrategy,
+  Input,
+  TemplateRef
+} from "@angular/core";
 
 @Component({
-  selector: 'app-product-form',
-  templateUrl: './product-form.component.html',
-  styleUrls: ['./product-form.component.css']
+  selector: "app-product-form",
+  templateUrl: "./product-form.component.html",
+  styleUrls: ["./product-form.component.css"],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ProductFormComponent implements OnInit {
+  @Input() data: any[];
+  @Input() itemTemplate: TemplateRef<HTMLElement>;
+  constructor() {}
 
-  constructor() { }
-
-  ngOnInit(): void {
-  }
-
+  ngOnInit(): void {}
 }
