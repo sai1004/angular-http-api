@@ -1,6 +1,7 @@
 import { Component, OnInit, Inject } from "@angular/core";
 import { Profile } from "src/app/entities/Profile";
 import { MAT_DIALOG_DATA, MatDialogRef } from "@angular/material/dialog";
+import { Observable } from 'rxjs';
 
 @Component({
   selector: "app-profile-create-page",
@@ -12,15 +13,18 @@ export class ProfileCreatePageComponent implements OnInit {
 
   constructor(
     private dialogRef: MatDialogRef<ProfileCreatePageComponent>,
-    @Inject(MAT_DIALOG_DATA) data
+    @Inject(MAT_DIALOG_DATA) data: Observable<any>
   ) {
-    this.profile = data.profile;
+    this.profile = new Profile();
+
+    // this.profile = data
   }
 
   ngOnInit(): void {}
 
   save(profileForm: any) {
     this.dialogRef.close(profileForm.value);
+    console.log("On Save: ",profileForm.value)
   }
 
   close() {

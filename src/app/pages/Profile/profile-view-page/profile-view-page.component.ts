@@ -18,25 +18,25 @@ export class ProfileViewPageComponent implements OnInit {
       id: "1",
       name: "john",
       email: "john@email.com",
-      mobile: 123456789,
-      password: "secret",
-      dob: "01-02-2000"
+      mobile: 123456789
+      // password: "secret",
+      // dob: "01-02-2000"
     },
     {
       id: "2",
       name: "chirs",
       email: "chris@email.com",
-      mobile: 123456789,
-      password: "secret",
-      dob: "01-02-2000"
+      mobile: 123456789
+      // password: "secret",
+      // dob: "01-02-2000"
     },
     {
       id: "3",
       name: "Simon",
       email: "simon@email.com",
-      mobile: 123456789,
-      password: "secret",
-      dob: "01-02-2000"
+      mobile: 123456789
+      // password: "secret",
+      // dob: "01-02-2000"
     }
   ];
 
@@ -70,9 +70,6 @@ export class ProfileViewPageComponent implements OnInit {
 
     dialogRef
       .afterClosed()
-      .subscribe(data => console.log("Dialog output:", data)
-      
-      // this.profile = data
-      );
+      .subscribe((data: any) => this.profile = data );
   }
 }

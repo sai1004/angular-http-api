@@ -3,6 +3,6 @@ export class Profile {
   name: string;
   email: string;
   mobile: number;
-  password: string;
-  dob: string;
+  // password: string;
+  // dob: string;
 }
