@@ -1,15 +1,15 @@
 <section>
-  <div *ngIf="Employee.length == 0">
+  <!-- <div *ngIf="Employee.length == 0">
     <p>There is no employee added yet!</p>
     <button class="btn btn-outline-primary" routerLink="/create-employee">
       Add Empoyee
     </button>
-  </div>
+  </div> -->
 
-  <div *ngIf="Employee.length > 0">
+  <div>
     <h3 Align="center">Employees List</h3>
 
-    <table class="table table-bordered">
+    <!-- <table class="table table-bordered">
       <thead>
         <tr>
           <th scope="col">User Id</th>
@@ -20,11 +20,11 @@
         </tr>
       </thead>
       <tbody>
-        <tr *ngFor="let employee of Employee">
-          <td>{{ employee.id }}</td>
-          <td>{{ employee.name }}</td>
-          <td>{{ employee.email }}</td>
-          <td>{{ employee.phone }}</td>
+        <tr *ngFor="let item of employee">
+          <td>{{ item.id }}</td>
+          <td>{{ item.employee_name }}</td>
+          <td>{{ item.employee_salary }}</td>
+          <td>{{ item.employee_age }}</td>
           <td>
             <span class="edit" routerLink="/employee-edit/{{ employee.id }}"
               >Edit</span
@@ -35,6 +35,16 @@
           </td>
         </tr>
       </tbody>
-    </table>
+    </table> -->
+    <h1>odfigdlfkg</h1>
+    <ng-container *ngFor="let item of employee.data">
+      <mat-card>
+        <p>{{ item.id }}</p>
+        <span>{{ item.employee_name }}</span>
+        <p>{{ item.employee_salary }}</p>
+
+        <p>{{ item.employee_age }}</p>
+      </mat-card>
+    </ng-container>
   </div>
 </section>

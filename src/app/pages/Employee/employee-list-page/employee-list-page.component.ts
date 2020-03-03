@@ -7,7 +7,7 @@ import { RestApiService } from "src/app/shared/services/rest-api.service";
   styleUrls: ["./employee-list-page.component.css"]
 })
 export class EmployeeListPageComponent implements OnInit {
-  Employee: any = [];
+  employee: any = [];
 
   constructor(public _restApi: RestApiService) {}
 
@@ -16,8 +16,10 @@ export class EmployeeListPageComponent implements OnInit {
   }
 
   loadEmployees() {
-    return this._restApi.getEmployees().subscribe((data: {}) => {
-      this.Employee = data;
+    return this._restApi.getEmployees().subscribe((data: any) => {
+      if (data) {
+        this.employee = data;
+      }
     });
   }
 

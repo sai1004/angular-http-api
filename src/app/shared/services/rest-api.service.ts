@@ -8,7 +8,7 @@ import { retry, catchError } from "rxjs/operators";
   providedIn: "root"
 })
 export class RestApiService {
-  private api_Url = "http://0.0.0.0:4545";
+  private api_Url = "http://dummy.restapiexample.com/api/v1/employees";
 
   constructor(private _http: HttpClient) {}
 
@@ -31,7 +31,7 @@ export class RestApiService {
 
   getEmployees(): Observable<Employee> {
     return this._http
-      .get<Employee>(this.api_Url + "/test.json")
+      .get<Employee>(this.api_Url)
       .pipe(retry(1), catchError(this.handleError));
   }
 
