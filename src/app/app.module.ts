@@ -19,9 +19,14 @@ import { ProfileCreatePageComponent } from "./pages/Profile/profile-create-page/
 /* */
 
 import { RestApiService } from "../app/shared/services/rest-api.service";
-import { ProductPageComponent } from './pages/product-page/product-page.component';
-import { ProductFormComponent } from './components/product-form/product-form.component';
+import { ProductPageComponent } from "./pages/product-page/product-page.component";
+import { ProductFormComponent } from "./components/product-form/product-form.component";
+import { CartPageComponent } from "./pages/cart-page/cart-page.component";
 
+/* service */
+
+import { ProductService } from "./pages/product-page/product.service";
+import { CartService } from "./pages/cart-page/cart.service"
 @NgModule({
   declarations: [
     AppComponent,
@@ -34,7 +39,8 @@ import { ProductFormComponent } from './components/product-form/product-form.com
     ProfileEditPageComponent,
     ProfileCreatePageComponent,
     ProductPageComponent,
-    ProductFormComponent
+    ProductFormComponent,
+    CartPageComponent
   ],
   imports: [
     BrowserModule,
@@ -42,7 +48,7 @@ import { ProductFormComponent } from './components/product-form/product-form.com
     BrowserAnimationsModule,
     SharedModule
   ],
-  providers: [RestApiService],
+  providers: [RestApiService, ProductService, CartService],
   bootstrap: [AppComponent]
 })
 export class AppModule {}

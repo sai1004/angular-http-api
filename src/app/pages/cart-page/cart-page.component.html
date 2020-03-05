@@ -1,0 +1,16 @@
+<section>
+  <h1>cart</h1>
+  <div>
+    <ng-container *ngFor="let item of cartItems">
+      <mat-card>
+        <h1>{{ item.id }}</h1>
+        <h2>{{ item.name }}</h2>
+        <h5>{{ item.price }}</h5>
+
+        <button>
+          <mat-icon>delete</mat-icon>
+        </button>
+      </mat-card>
+    </ng-container>
+  </div>
+</section>

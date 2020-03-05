@@ -1,5 +1,6 @@
 import { Component, OnInit } from "@angular/core";
-import { Products } from 'src/app/entities/Products';
+import { Products } from "src/app/entities/Products";
+import { ProductService } from "./product.service";
 
 @Component({
   selector: "app-product-page",
@@ -7,27 +8,15 @@ import { Products } from 'src/app/entities/Products';
   styleUrls: ["./product-page.component.css"]
 })
 export class ProductPageComponent implements OnInit {
-  // products: any[] = [
-  //   {
-  //     name: "car",
-  //     price: 11111,
-  //     owner: "kirk"
-  //   }
-  // ];
+  products: any[];
 
-  // shouldSayHello: Boolean = true;
-  // home: Boolean = true;
-
-  // products: any[] = [
-  //   { id: 4, name: 'Laptop', rating: 3 },
-  //   { id: 4, name: 'Laptop', rating: 5 },
-  //   { id: 4, name: 'Laptop', rating: 4 }
-  // ]
-
-  products: Products;
-  constructor() {
-    
+  constructor(private _productsService: ProductService) {
+    this.products = _productsService.getProducts();
   }
 
   ngOnInit(): void {}
+
+  addTocart(product: any) {
+    this._productsService.saveToCart(product);
+  }
 }

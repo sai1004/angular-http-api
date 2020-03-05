@@ -5,13 +5,15 @@ import { ProfileViewPageComponent } from "./pages/Profile/profile-view-page/prof
 import { ProfileEditPageComponent } from "./pages/Profile/profile-edit-page/profile-edit-page.component";
 import { ProfileCreatePageComponent } from "./pages/Profile/profile-create-page/profile-create-page.component";
 import { ProductPageComponent } from "./pages/product-page/product-page.component";
+import { CartPageComponent } from './pages/cart-page/cart-page.component';
 
 const routes: Routes = [
   { path: "emp-list", component: EmployeeListPageComponent },
   { path: "profile-view", component: ProfileViewPageComponent },
   { path: "profile-edit", component: ProfileEditPageComponent },
   { path: "profile-create", component: ProfileCreatePageComponent },
-  { path: "product", component: ProductPageComponent }
+  { path: "product", component: ProductPageComponent },
+  { path: "cart", component: CartPageComponent}
 ];
 
 @NgModule({
