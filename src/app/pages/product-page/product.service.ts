@@ -1,12 +1,11 @@
 import { Injectable } from "@angular/core";
+import { Observable, Subject } from "rxjs";
 
 @Injectable({
   providedIn: "root"
 })
 export class ProductService {
   constructor() {}
-
-  cartItems: any[] = [];
 
   getProducts() {
     return [
@@ -16,12 +15,7 @@ export class ProductService {
     ];
   }
 
-  getCartItems() {
-    return this.cartItems;
-  }
+  getCartItems() {}
 
-  saveToCart(itemFromProduct: any) {
-    console.log(itemFromProduct);
-    this.cartItems.push(itemFromProduct);
-  }
+  saveToCart(itemFromProduct: any) {}
 }

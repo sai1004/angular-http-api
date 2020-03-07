@@ -1,17 +1,17 @@
 import { Injectable } from "@angular/core";
 import { ProductService } from "../product-page/product.service";
+import { Subscription } from "rxjs";
 
 @Injectable({
   providedIn: "root"
 })
 export class CartService {
-  savedCartItems: any[] = [];
+  subscription: Subscription;
 
-  constructor(private _productsService: ProductService) {
-    this.savedCartItems = _productsService.getCartItems();
-  }
+  cartItems: any;
+  constructor(private _productsService: ProductService) {}
 
   showCartItems() {
-    return this.savedCartItems;
+    return this.cartItems;
   }
 }

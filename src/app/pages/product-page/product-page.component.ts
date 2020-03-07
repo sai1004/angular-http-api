@@ -16,7 +16,8 @@ export class ProductPageComponent implements OnInit {
 
   ngOnInit(): void {}
 
-  addTocart(product: any) {
-    this._productsService.saveToCart(product);
+  addTocart(product: any): void {
+     
+
   }
 }
