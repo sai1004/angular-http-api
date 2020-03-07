@@ -1,4 +1,5 @@
-import { Component, OnInit, Input } from "@angular/core";
+import { Component, OnInit, Input, Output, EventEmitter } from "@angular/core";
+import { Todo } from "../../entities/Todo";
 
 @Component({
   selector: "app-todo-item",
@@ -7,8 +8,18 @@ import { Component, OnInit, Input } from "@angular/core";
 })
 export class TodoItemComponent implements OnInit {
   @Input()
-  todoItem: any;
+  todoItem: Todo = {
+    id: 0,
+    title: "",
+    description: "",
+    show: false
+  };
   constructor() {}
 
   ngOnInit(): void {}
+  @Output() toggleCard = new EventEmitter();
+
+  onToggleCard() {
+    this.toggleCard.emit(this.todoItem.id);
+  }
 }

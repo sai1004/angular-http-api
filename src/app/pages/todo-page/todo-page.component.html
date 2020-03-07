@@ -84,17 +84,17 @@
         </div>
       </form>
     </div>
+  </div>
+</section>
 
-    <!-- todoItems -->
-
-    <div>
-      <div *ngIf="todos$ | async as todos">
-        <app-todo-item
-         
-          [todoItem]="todos"
-          (toggleCard)="handleToggleCard($event)"
-        ></app-todo-item>
-      </div>
+<!-- todoItems -->
+<section fxLayoutAlign="center">
+  <div>
+    <div *ngIf="todos$ | async as todos">
+      <app-todo-item
+        [todoItem]="todos"
+        (toggleCard)="handleToggleCard($event)"
+      ></app-todo-item>
     </div>
   </div>
 </section>
