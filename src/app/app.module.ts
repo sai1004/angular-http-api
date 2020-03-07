@@ -28,7 +28,7 @@ import { CartPageComponent } from "./pages/cart-page/cart-page.component";
 import { ProductService } from "./pages/product-page/product.service";
 import { CartService } from "./pages/cart-page/cart.service";
 import { TodoPageComponent } from "./pages/todo-page/todo-page.component";
-import { TodoItemComponent } from './components/todo-item/todo-item.component';
+import { TodoItemComponent } from "./components/todo-item/todo-item.component";
 @NgModule({
   declarations: [
     AppComponent,
