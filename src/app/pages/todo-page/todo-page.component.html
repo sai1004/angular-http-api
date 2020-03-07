@@ -1,0 +1,37 @@
+<section fxLayoutAlign="center">
+  <div>
+    <h1>Todo App</h1>
+
+    <div>
+      <mat-form-field>
+        <mat-label> Enter Your Task </mat-label>
+        <input
+          matInput
+          placeholder="Placeholder"
+          name="text"
+          [(ngModel)]="todo.text"
+          #todoText="ngModel"
+          required
+        />
+        <mat-hint *ngIf="!todoText.valid && todoText.touched">
+          Task Must Be Entered
+        </mat-hint>
+      </mat-form-field>
+
+      <button
+        mat-raised-button
+        [disabled]="!todoText.valid"
+        color="primary"
+        (click)="onAddTodo(todoText.value)"
+      >
+        Add
+      </button>
+    </div>
+
+    <div>
+      <mat-card>
+        <app-todo-item [todoItem]="todoItem"></app-todo-item>
+      </mat-card>
+    </div>
+  </div>
+</section>

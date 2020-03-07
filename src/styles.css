@@ -9,3 +9,7 @@ body {
 .mat-toolbar {
   padding: 0;
 }
+
+.mat-hint{
+  color: red !important;
+}
