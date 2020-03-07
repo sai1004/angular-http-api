@@ -1,37 +1,100 @@
 <section fxLayoutAlign="center">
+  <!-- form -->
   <div>
     <h1>Todo App</h1>
 
     <div>
-      <mat-form-field>
-        <mat-label> Enter Your Task </mat-label>
-        <input
-          matInput
-          placeholder="Placeholder"
-          name="text"
-          [(ngModel)]="todo.text"
-          #todoText="ngModel"
-          required
-        />
-        <mat-hint *ngIf="!todoText.valid && todoText.touched">
-          Task Must Be Entered
-        </mat-hint>
-      </mat-form-field>
+      <form #todoForm="ngForm" autocapitalize="off">
+        <div>
+          <!-- titlt -->
+          <mat-form-field>
+            <mat-label> Title </mat-label>
+            <input
+              matInput
+              placeholder="Enter Title"
+              name="title"
+              [(ngModel)]="todo.title"
+              #todoTitle="ngModel"
+              required
+            />
+            <mat-hint *ngIf="!todoTitle.valid && todoTitle.touched">
+              Required
+            </mat-hint>
+          </mat-form-field>
+        </div>
+        <!-- description -->
+        <div>
+          <mat-form-field>
+            <mat-label> Description </mat-label>
+            <input
+              matInput
+              placeholder="Enter Description"
+              name="description"
+              [(ngModel)]="todo.description"
+              #todoDescription="ngModel"
+              required
+            />
+            <mat-hint *ngIf="!todoDescription.valid && todoDescription.touched">
+              Required
+            </mat-hint>
+          </mat-form-field>
+        </div>
 
-      <button
-        mat-raised-button
-        [disabled]="!todoText.valid"
-        color="primary"
-        (click)="onAddTodo(todoText.value)"
-      >
-        Add
-      </button>
+        <!-- buttons -->
+        <div>
+          <ng-template #addBtn>
+            <button
+              mat-raised-button
+              type="submit"
+              [disabled]="!todoForm.valid"
+              color="primary"
+              (click)="handleSubmit()"
+            >
+              Add
+            </button>
+          </ng-template>
+
+          <button
+            mat-raised-button
+            *ngIf="editing; else addBtn"
+            (click)="handleUpdate()"
+            [disabled]="!todoForm.valid"
+          >
+            Update
+          </button>
+
+          <button
+            mat-raised-button
+            *ngIf="editing; else clearBtn"
+            (click)="handleCancel()"
+          >
+            Cancel
+          </button>
+
+          <ng-template #clearBtn>
+            <button
+              mat-raised-button
+              type="reset"
+              color="primary"
+              (click)="handleClear()"
+            >
+              Clear
+            </button>
+          </ng-template>
+        </div>
+      </form>
     </div>
 
+    <!-- todoItems -->
+
     <div>
-      <mat-card>
-        <app-todo-item [todoItem]="todoItem"></app-todo-item>
-      </mat-card>
+      <div *ngIf="todos$ | async as todos">
+        <app-todo-item
+         
+          [todoItem]="todos"
+          (toggleCard)="handleToggleCard($event)"
+        ></app-todo-item>
+      </div>
     </div>
   </div>
 </section>

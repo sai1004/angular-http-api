@@ -1,3 +1,7 @@
-<div *ngIf="todoItem">
-  <h5>{{ todoItem }}</h5>
+<div>
+  <div fxLayout="row" fxLayoutAlign="space-around">
+    <ng-container *ngFor="let todo of todoItem">
+      {{ todo.title }}
+    </ng-container>
+  </div>
 </div>

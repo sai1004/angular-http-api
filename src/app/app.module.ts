@@ -29,6 +29,8 @@ import { ProductService } from "./pages/product-page/product.service";
 import { CartService } from "./pages/cart-page/cart.service";
 import { TodoPageComponent } from "./pages/todo-page/todo-page.component";
 import { TodoItemComponent } from "./components/todo-item/todo-item.component";
+import { TodoService } from "./pages/todo-page/todo.service";
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -52,7 +54,7 @@ import { TodoItemComponent } from "./components/todo-item/todo-item.component";
     BrowserAnimationsModule,
     SharedModule
   ],
-  providers: [RestApiService, ProductService, CartService],
+  providers: [RestApiService, ProductService, CartService, TodoService],
   bootstrap: [AppComponent]
 })
 export class AppModule {}

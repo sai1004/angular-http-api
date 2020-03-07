@@ -1,20 +1,14 @@
-import { Component, OnInit, Input } from '@angular/core';
-import { Todo } from 'src/app/entities/Todo';
+import { Component, OnInit, Input } from "@angular/core";
 
 @Component({
-  selector: 'app-todo-item',
-  templateUrl: './todo-item.component.html',
-  styleUrls: ['./todo-item.component.css']
+  selector: "app-todo-item",
+  templateUrl: "./todo-item.component.html",
+  styleUrls: ["./todo-item.component.css"]
 })
 export class TodoItemComponent implements OnInit {
-
   @Input()
-  todoItem:any
-  constructor() {
-     
-   }
+  todoItem: any;
+  constructor() {}
 
-  ngOnInit(): void {
-  }
-
+  ngOnInit(): void {}
 }
