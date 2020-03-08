@@ -1,10 +1,12 @@
 <mat-toolbar color="warn">
-  <div fxLayout="row" fxLayoutAlign="space-around center">
-    <button mat-raised-button color="primary">Employee</button>
+  <span>Logo Here</span>
 
-    <button mat-raised-button color="primary" routerLink="/profile-view">
-      Profile
+  <span class="filler"></span>
+
+  <ng-container *ngFor="let menu of menus">
+    <button mat-raised-button routerLink="/{{ menu.link }}">
+      {{ menu.name }}
     </button>
-  </div>
+  </ng-container>
 </mat-toolbar>
 <router-outlet></router-outlet>

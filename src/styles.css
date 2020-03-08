@@ -6,10 +6,23 @@ body {
   font-family: Roboto, "Helvetica Neue", sans-serif;
 }
 
-.mat-toolbar {
+.mat-hint {
+  color: red !important;
+}
+
+header .mat-toolbar {
   padding: 0;
 }
 
-.mat-hint{
-  color: red !important;
+table {
+  width: 100%;
+}
+
+.filler {
+  flex: 1 1 auto;
+}
+
+a {
+  text-decoration: none;
+  color: black;
 }

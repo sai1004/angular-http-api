@@ -9,6 +9,8 @@ import { RestApiService } from "src/app/shared/services/rest-api.service";
 export class EmployeeListPageComponent implements OnInit {
   employee: any = [];
 
+  displayedColumns: string[] = ["id", "name", "salary", "age"];
+
   constructor(public _restApi: RestApiService) {}
 
   ngOnInit(): void {

@@ -1,17 +1,20 @@
 <section>
-  <mat-toolbar>
-    <span>Profile</span>
-    <span class="example-fill-remaining-space"></span>
+  <header>
+    <mat-toolbar>
+      <span>Profile</span>
+      <span class="filler"></span>
 
-    <button
-      class="edit-btn"
-      mat-raised-button
-      color="primary"
-      routerLink="/profile-edit"
-    >
-      <mat-icon>edit</mat-icon>
-    </button>
-  </mat-toolbar>
+      <button
+        class="edit-btn"
+        mat-raised-button
+        color="primary"
+        routerLink="/profile-edit"
+      >
+        <mat-icon>edit</mat-icon>
+      </button>
+    </mat-toolbar>
+  </header>
+
   <table mat-table [dataSource]="profile" class="mat-elevation-z8">
     <!-- Position Column -->
     <ng-container matColumnDef="id">
@@ -38,17 +41,21 @@
     <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
   </table>
 
-<!-- mat-dialog -->
-<!-- <div>
+  <!-- mat-dialog -->
+  <!-- <div>
   <mat-form-field>
     <mat-label>What's your name?</mat-label>
     <input matInput name="profile.name" [(ngModel)]="profile.name">
   </mat-form-field>
 
 </div> -->
- 
 
-  <button mat-fab color="warn"  (click)="openDialog()" style=" position: fixed; right: 30px; top: 92% ">
+  <button
+    mat-fab
+    color="warn"
+    (click)="openDialog()"
+    style=" position: fixed; right: 30px; top: 92% "
+  >
     <mat-icon>add</mat-icon>
   </button>
 </section>
