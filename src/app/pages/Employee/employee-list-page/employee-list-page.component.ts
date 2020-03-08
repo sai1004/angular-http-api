@@ -1,5 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { RestApiService } from "src/app/shared/services/rest-api.service";
+import { Employee } from "src/app/entities/Employee";
 
 @Component({
   selector: "app-employee-list-page",
@@ -7,20 +8,25 @@ import { RestApiService } from "src/app/shared/services/rest-api.service";
   styleUrls: ["./employee-list-page.component.css"]
 })
 export class EmployeeListPageComponent implements OnInit {
-  employee: any = [];
+  // employee: any = [];
+
+  employee: Employee;
 
   displayedColumns: string[] = ["id", "name", "salary", "age"];
 
-  constructor(public _restApi: RestApiService) {}
+  constructor(public _restApi: RestApiService) {
+    this.employee = new Employee();
+  }
 
   ngOnInit(): void {
     this.loadEmployees();
   }
 
   loadEmployees() {
-    return this._restApi.getEmployees().subscribe((data: any) => {
-      if (data) {
-        this.employee = data;
+    return this._restApi.getEmployees().subscribe((result: any) => {
+      if (result) {
+        console.log(result.data);
+        this.employee = result.data;
       }
     });
   }
