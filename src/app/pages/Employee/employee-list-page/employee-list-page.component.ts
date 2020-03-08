@@ -8,8 +8,6 @@ import { Employee } from "src/app/entities/Employee";
   styleUrls: ["./employee-list-page.component.css"]
 })
 export class EmployeeListPageComponent implements OnInit {
-  // employee: any = [];
-
   employee: Employee;
 
   displayedColumns: string[] = ["id", "name", "salary", "age"];

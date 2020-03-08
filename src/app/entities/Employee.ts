@@ -1,6 +1,7 @@
 export class Employee {
   id: string;
-  name: string;
-  salary: string;
-  age: string;
+  employee_name: string;
+  employee_salary: string;
+  employee_age: string;
+  // profile_image: string;
 }
