@@ -1,21 +1,4 @@
- .mat-card {
+ .mat-accordion {
    margin: 5px;
-   min-width: 200px;
- }
-
- .card-header {
-   cursor: pointer;
- }
-
- .card-header.correct {
-   background: #51be51;
- }
-
- .card-header.incorrect {
-   background: red;
- }
-
- .correct .card-header-title,
- .incorrect .card-header-title {
-   color: white;
+   width: 300px
  }

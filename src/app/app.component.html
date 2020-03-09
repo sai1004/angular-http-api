@@ -2,11 +2,12 @@
   <span>Logo Here</span>
 
   <span class="filler"></span>
-
-  <ng-container *ngFor="let menu of menus">
-    <button mat-raised-button routerLink="/{{ menu.link }}">
-      {{ menu.name }}
-    </button>
-  </ng-container>
+  <div fxHide.lt-md>
+    <ng-container *ngFor="let menu of menus">
+      <button mat-button routerLink="/{{ menu.link }}">
+        {{ menu.name }}
+      </button>
+    </ng-container>
+  </div>
 </mat-toolbar>
 <router-outlet></router-outlet>

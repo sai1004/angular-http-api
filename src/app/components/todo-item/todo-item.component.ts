@@ -7,6 +7,8 @@ import { Todo } from "../../entities/Todo";
   styleUrls: ["./todo-item.component.css"]
 })
 export class TodoItemComponent implements OnInit {
+  panelOpenState = false;
+
   @Input()
   todoItem: Todo = {
     id: 0,
@@ -14,12 +16,22 @@ export class TodoItemComponent implements OnInit {
     description: "",
     show: false
   };
+
   constructor() {}
 
   ngOnInit(): void {}
+
   @Output() toggleCard = new EventEmitter();
 
   onToggleCard() {
     this.toggleCard.emit(this.todoItem.id);
   }
+
+  markCorrect() {}
+
+  markIncorrect() {}
+
+  editFlash() {}
+
+  deleteFlash() {}
 }

@@ -52,7 +52,7 @@ export class TodoPageComponent implements OnInit {
     this.handleClear();
   }
 
-  handleToggleCard(id) {
+  handleToggleCard(id:number) {
     this._todoService.toggleTodo(id);
   }
 }
