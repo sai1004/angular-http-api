@@ -48,20 +48,15 @@ export class TodoService {
     this.todos$.next(this.todos);
   }
 
-  toggleTodo(id: number) {
+  deleteTodo(id: number) {
     const index = this.todos.findIndex(todo => todo.id === id);
     this.todos = [
       ...this.todos.slice(0, index),
-      {
-        ...this.todos[index],
-        show: !this.todos[index].show
-      },
+
       ...this.todos.slice(index + 1)
     ];
     this.todos$.next(this.todos);
   }
-
-  deleteTodo() {}
 
   doneTodo() {}
 

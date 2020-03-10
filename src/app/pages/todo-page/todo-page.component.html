@@ -1,14 +1,14 @@
 <section fxLayoutAlign="center">
-  <!-- form -->
   <div>
     <div Align="center">
       <h1>Todo App</h1>
     </div>
 
+    <!-- form -->
     <div>
       <form #todoForm="ngForm" autocapitalize="off">
         <div>
-          <!-- titlt -->
+          <!-- title -->
           <mat-form-field>
             <mat-label> Title </mat-label>
             <input
@@ -50,7 +50,7 @@
               type="submit"
               [disabled]="!todoForm.valid"
               color="primary"
-              (click)="handleSubmit()"
+              (click)="onAdd()"
             >
               Add
             </button>
@@ -59,7 +59,7 @@
           <button
             mat-raised-button
             *ngIf="editing; else addBtn"
-            (click)="handleUpdate()"
+            (click)="onUpdate()"
             [disabled]="!todoForm.valid"
           >
             Update
@@ -78,7 +78,7 @@
               mat-raised-button
               type="reset"
               color="primary"
-              (click)="handleClear()"
+              (click)="onClear()"
             >
               Clear
             </button>
@@ -95,7 +95,7 @@
     <div *ngIf="todos$ | async as todos">
       <app-todo-item
         [todoItem]="todos"
-        (toggleCard)="handleToggleCard($event)"
+        (delete)="deleteTodo($event)"
       ></app-todo-item>
     </div>
   </div>

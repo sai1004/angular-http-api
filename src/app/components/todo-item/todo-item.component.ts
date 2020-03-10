@@ -21,11 +21,9 @@ export class TodoItemComponent implements OnInit {
 
   ngOnInit(): void {}
 
-  @Output() toggleCard = new EventEmitter();
+  @Output() editTodo = new EventEmitter();
 
-  onToggleCard() {
-    this.toggleCard.emit(this.todoItem.id);
-  }
+  @Output() delete = new EventEmitter();
 
   markCorrect() {}
 
@@ -33,5 +31,7 @@ export class TodoItemComponent implements OnInit {
 
   editFlash() {}
 
-  deleteFlash() {}
+  deleteTodo(id: number) {
+    this.delete.emit(id);
+  }
 }

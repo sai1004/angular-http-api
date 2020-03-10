@@ -2,7 +2,7 @@
   <div fxLayout="row wrap" fxLayoutAlign="space-around">
     <ng-container *ngFor="let todo of todoItem">
       <mat-accordion>
-        <mat-expansion-panel (click)="onToggleCard()" [ngClass]="todo.done">
+        <mat-expansion-panel [ngClass]="todo.done">
           <mat-expansion-panel-header>
             <mat-panel-title>
               {{ todo.title }}
@@ -27,7 +27,7 @@
             <button mat-button (click)="editFlash()">
               <mat-icon>edit</mat-icon>
             </button>
-            <button mat-button color="warn" (click)="deleteFlash()">
+            <button mat-button color="warn" (click)="deleteTodo(todo.id)">
               <mat-icon>delete_forever</mat-icon>
             </button>
           </div>

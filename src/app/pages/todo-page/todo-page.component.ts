@@ -14,7 +14,6 @@ export class TodoPageComponent implements OnInit {
   editing = false;
   editingId;
 
-  // init Obj
   todo = {
     title: "",
     description: ""
@@ -29,14 +28,13 @@ export class TodoPageComponent implements OnInit {
 
   ngOnInit(): void {}
 
-  handleSubmit(): void {
+  onAdd(): void {
     this._todoService.addTodo(this.todo);
     console.log(this.todo);
-    this.handleClear();
+    this.onClear();
   }
 
-  handleClear() {
-    // resetting The Form
+  onClear() {
     this.todo = {
       title: "",
       description: ""
@@ -44,15 +42,16 @@ export class TodoPageComponent implements OnInit {
     this.todoForm.reset();
   }
 
-  handleUpdate() {
+  onUpdate() {
     this.handleCancel();
   }
 
   handleCancel() {
-    this.handleClear();
+    this.onClear();
   }
 
-  handleToggleCard(id:number) {
-    this._todoService.toggleTodo(id);
+  deleteTodo(id: number) {
+    console.log("parent:", id);
+    this._todoService.deleteTodo(id);
   }
 }
