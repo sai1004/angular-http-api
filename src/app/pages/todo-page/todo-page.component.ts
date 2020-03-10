@@ -51,7 +51,6 @@ export class TodoPageComponent implements OnInit {
   }
 
   deleteTodo(id: number) {
-    console.log("parent:", id);
     this._todoService.deleteTodo(id);
   }
 }

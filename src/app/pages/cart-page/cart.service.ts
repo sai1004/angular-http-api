@@ -6,12 +6,8 @@ import { Subscription } from "rxjs";
   providedIn: "root"
 })
 export class CartService {
-  subscription: Subscription;
-
-  cartItems: any;
   constructor(private _productsService: ProductService) {}
-
   showCartItems() {
-    return this.cartItems;
+    return [];
   }
 }
