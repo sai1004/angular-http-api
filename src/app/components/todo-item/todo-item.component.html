@@ -21,13 +21,30 @@
           <!-- </div> -->
           <!-- icons -->
           <div fxLayoutAlign="space-around">
-            <button mat-button color="green" (click)="markCorrect()">
+            <button
+              mat-button
+              color="green"
+              (click)="markCorrect()"
+              matTooltip="done"
+              matTooltipPosition="above"
+            >
               <mat-icon>done</mat-icon>
             </button>
-            <button mat-button (click)="editFlash()">
+            <button
+              mat-button
+              (click)="editFlash()"
+              matTooltip="edit"
+              matTooltipPosition="above"
+            >
               <mat-icon>edit</mat-icon>
             </button>
-            <button mat-button color="warn" (click)="deleteTodo(todo.id)">
+            <button
+              mat-button
+              color="warn"
+              (click)="deleteTodo(todo.id)"
+              matTooltip="delete"
+              matTooltipPosition="above"
+            >
               <mat-icon>delete_forever</mat-icon>
             </button>
           </div>
