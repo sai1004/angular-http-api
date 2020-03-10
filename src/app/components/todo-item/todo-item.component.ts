@@ -32,6 +32,11 @@ export class TodoItemComponent implements OnInit {
   editFlash() {}
 
   deleteTodo(id: number) {
-    this.delete.emit(id);
+    let req = confirm("Are you sure, you want to delete it?");
+    if (req == true) {
+      this.delete.emit(id);
+    } else {
+      return false;
+    }
   }
 }
